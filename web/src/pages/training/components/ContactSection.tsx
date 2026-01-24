@@ -1,5 +1,5 @@
 import { Container } from "../../../ui/Container";
-import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconMail, IconPhone /* IconMapPin */ } from "@tabler/icons-react";
 import { useState } from "react";
 
 export const ContactSection = () => {
