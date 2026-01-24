@@ -1,6 +1,7 @@
 import { Container } from "../ui/Container";
 import { IconMailSpark, IconMapPin, IconPhone } from "@tabler/icons-react";
 import logoFooter from "../assets/footerlogo.png";
+import logoFooterPe from "../assets/logosPeru.webp";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -68,11 +69,19 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <IconPhone className="w-5 h-5 shrink-0" />
-                <span>+51 999 999 999</span>
+                <a
+                  href="tel:+51957194775"
+                  className="hover:text-white transition whitespace-nowrap"
+                >
+                  +51 957 194 775
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <IconMailSpark className="w-5 h-5 shrink-0" />
-                <a href="mailto:tecnico@lcfasteners.com" className="hover:text-white transition">
+                <a
+                  href="mailto:tecnico@lcfasteners.com"
+                  className="hover:text-white transition whitespace-nowrap"
+                >
                   tecnico@lcfasteners.com
                 </a>
               </li>
@@ -84,6 +93,9 @@ export const Footer = () => {
         <div className="pt-8 border-t border-navy-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>© 2026 LC Fasteners & Coatings Branch LATAM S.A.C. Todos los derechos reservados.</p>
+            <span className="flex flex-row gap-x-4">
+              | Realizado por <img src={logoFooterPe} className="w-5" />
+            </span>
           </div>
         </div>
       </Container>

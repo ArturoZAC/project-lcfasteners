@@ -12,29 +12,31 @@ export const Compliance = () => {
   return (
     <Banner backgroundColor="bg-navy-hover" className="py-16 md:py-20">
       <div className="max-w-4xl mx-auto">
-        {/* Título */}
-        <h3 className="text-3xl md:text-4xl font-semibold text-white text-center mb-8">
+        {/* 5️⃣ Título - Sin cortes silábicos */}
+        <h3 className="text-3xl md:text-4xl font-semibold text-white text-center mb-8 [hyphens:none] [word-break:normal]">
           Cumplimiento normativo y principio de prevalencia
         </h3>
 
-        {/* Texto introductorio */}
-        <p className="text-lg text-zinc-300 mb-6">
+        {/* Texto introductorio - Sin cortes silábicos */}
+        <p className="text-lg text-zinc-300 mb-6 [hyphens:none] [word-break:normal] wrap-normal">
           Todas las actividades de LC Fasteners se ejecutan bajo estricto cumplimiento de:
         </p>
 
-        {/* Lista de cumplimiento */}
+        {/* 5️⃣ Lista de cumplimiento - Sin cortes silábicos, bullets legibles */}
         <ul className="space-y-3 mb-8">
           {complianceItems.map((item, index) => (
             <li key={index} className="flex items-start">
               <span className="text-blue-600 mr-3 mt-1 shrink-0">●</span>
-              <span className="text-white text-lg">{item}</span>
+              <span className="text-white text-lg [hyphens:none] [word-break:normal] wrap-normal">
+                {item}
+              </span>
             </li>
           ))}
         </ul>
 
-        {/* Texto de cierre con énfasis legal */}
+        {/* Texto de cierre - Sin cortes silábicos */}
         <div className="bg-white border-l-4 border-blue-600 p-6 rounded-r shadow-sm">
-          <p className="text-gray-800 font-medium leading-relaxed">
+          <p className="text-gray-800 font-medium leading-relaxed [hyphens:none] [word-break:normal] wrap-normal">
             En ningún caso se adoptan criterios técnicos, comerciales o de desempeño que prevalezcan
             sobre el marco legal y normativo aplicable.
           </p>

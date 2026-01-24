@@ -1,5 +1,7 @@
 import { IconCircleCheckFilled } from "@tabler/icons-react";
 import { Container } from "../../../ui/Container";
+import estabilidad02 from "../../../assets/valid/estabilidad02-off.webp";
+import estabilidad03 from "../../../assets/valid/estabilidad-03.webp";
 
 export const DigitalTraceability = () => {
   const features = [
@@ -54,7 +56,7 @@ export const DigitalTraceability = () => {
             <div className="absolute top-0 left-0 w-2/3">
               <div className="relative rounded-xl overflow-hidden shadow-xl h-64">
                 <img
-                  src="https://images.unsplash.com/photo-1767588114207-85a196d8089e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={estabilidad02}
                   alt="Certificación de calidad"
                   className="w-full h-full object-cover"
                 />
@@ -65,7 +67,7 @@ export const DigitalTraceability = () => {
             <div className="absolute bottom-0 right-0 w-2/3">
               <div className="relative rounded-xl overflow-hidden shadow-xl h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1767588114207-85a196d8089e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={estabilidad03}
                   alt="Documentación técnica"
                   className="w-full h-full object-cover"
                 />

@@ -40,11 +40,13 @@ export const TechnicalPrinciples = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Nuestra ética</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Principios Técnicos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4 [hyphens:none]">
+            Principios Técnicos
+          </h2>
           <div className="w-16 h-1 bg-gray-300 mx-auto"></div>
         </div>
 
-        {/* Cards Grid */}
+        {/* 4️⃣ Cards Grid - Sin cortes silábicos en títulos y textos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {principles.map((principle, index) => {
             const Icon = principle.icon;
@@ -58,11 +60,15 @@ export const TechnicalPrinciples = () => {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-navy mb-3">{principle.title}</h3>
+                {/* Title - Sin cortes silábicos */}
+                <h3 className="text-lg font-semibold text-navy mb-3 [hyphens:none] [word-break:normal]">
+                  {principle.title}
+                </h3>
 
-                {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed">{principle.description}</p>
+                {/* Description - Sin cortes silábicos */}
+                <p className="text-sm text-gray-600 leading-relaxed [hyphens:none] [word-break:normal] wrap-normal">
+                  {principle.description}
+                </p>
               </div>
             );
           })}

@@ -5,6 +5,10 @@ import {
   IconTrendingUp2,
 } from "@tabler/icons-react";
 import { Container } from "../../../ui/Container";
+import card01 from "../../../assets/training/card01.webp";
+import card02 from "../../../assets/training/card02.webp";
+import card03 from "../../../assets/training/card03.webp";
+import card04 from "../../../assets/training/card04.webp";
 
 export const TrainingAreas = () => {
   const areas = [
@@ -13,24 +17,28 @@ export const TrainingAreas = () => {
       title: "Interpretación de Normas",
       description:
         "Formación profunda en normativas ISO/ASTM aplicadas a sistemas de fijación y requerimientos industriales.",
+      image: card01,
     },
     {
       icon: IconPointerCog,
       title: "Técnicas de Instalación",
       description:
         "Talleres prácticos sobre el torque correcto, pre-tensión y procedimientos operativos críticos en campo.",
+      image: card02,
     },
     {
       icon: IconClipboardCheck,
       title: "Control de Calidad",
       description:
         "Metrología avanzada, ensayos no destructivos y aseguramiento de estándares técnicos internacionales.",
+      image: card03,
     },
     {
       icon: IconTrendingUp2,
       title: "Gestión de Integridad",
       description:
         "Análisis integral del ciclo de vida del activo, prevención de fallas por corrosión o fatiga.",
+      image: card04,
     },
   ];
 
@@ -55,7 +63,7 @@ export const TrainingAreas = () => {
                 {/* Imagen */}
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1767588114207-85a196d8089e?q=80&w=1074&auto=format&fit=crop"
+                    src={area.image}
                     alt={area.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />

@@ -19,7 +19,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-navy-hover shadow-sm">
+    <header className="w-full bg-navy-hover shadow-sm sticky top-0 z-50">
       <Container>
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}

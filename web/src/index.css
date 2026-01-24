@@ -26,3 +26,14 @@ button {
   --color-navy-hover: #1e2140;
   --color-navy: #274d94;
 }
+
+/* Desactivar hyphenation globalmente en mobile */
+/* @media (max-width: 768px) {
+  * {
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -ms-hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+} */

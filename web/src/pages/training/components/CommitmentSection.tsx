@@ -3,7 +3,10 @@ import { IconBrandWhatsapp, IconHeartHandshake } from "@tabler/icons-react";
 
 export const CommitmentSection = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/51955512345", "_blank", "noopener,noreferrer");
+    const message = encodeURIComponent(
+      "Hola, necesito más información sobre sus productos y servicios.",
+    );
+    window.open(`https://wa.me/51957194775?text=${message}`, "_blank", "noopener,noreferrer");
   };
 
   return (

@@ -1,9 +1,10 @@
 import { Banner } from "../../../ui/Banner";
+import main from "../../../assets/modelo/fondomodel.webp";
 
 export const ManagementModelHero = () => {
   return (
     <Banner
-      backgroundImage="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1920"
+      backgroundImage={main}
       overlay={true}
       overlayColor="bg-black/85"
       className="py-24 md:py-32 lg:py-40 min-h-[calc(100vh-95px)] flex items-center"

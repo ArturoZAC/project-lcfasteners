@@ -1,6 +1,9 @@
 import { IconAdjustmentsHorizontal, IconLayersIntersect2, IconSettings } from "@tabler/icons-react";
 import { Container } from "../../../ui/Container";
 
+import firstimage from "../../../assets/products/productoejemplo01.webp";
+import secondimage from "../../../assets/products/product02.webp";
+
 export const IndustrialFasteners = () => {
   const features = [
     {
@@ -74,7 +77,7 @@ export const IndustrialFasteners = () => {
             {/* Imagen 1 - Tornillo */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1767588114207-85a196d8089e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={secondimage}
                 alt="Tornillo industrial hexagonal"
                 className="w-full h-80 object-cover"
               />
@@ -83,7 +86,7 @@ export const IndustrialFasteners = () => {
             {/* Imagen 2 - Placa metálica */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1767588114207-85a196d8089e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={firstimage}
                 alt="Placa de montaje industrial"
                 className="w-full h-80 object-cover"
               />

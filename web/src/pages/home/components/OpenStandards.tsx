@@ -1,4 +1,6 @@
 import { Container } from "../../../ui/Container";
+import initial02 from "../../../assets/home/initial02.webp";
+import initial03 from "../../../assets/home/initial03.webp";
 
 export const OpenStandards = () => {
   const principles = [
@@ -18,7 +20,7 @@ export const OpenStandards = () => {
               {/* Imagen 1 - Rollo de material */}
               <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=800"
+                  src={initial02}
                   alt="Material metálico enrollado"
                   className="w-full h-64 md:h-72 object-cover"
                 />
@@ -26,7 +28,7 @@ export const OpenStandards = () => {
               {/* Imagen 2 - Equipo industrial */}
               <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800"
+                  src={initial03}
                   alt="Equipo de pruebas industrial"
                   className="w-full h-64 md:h-72 object-cover"
                 />
@@ -37,12 +39,12 @@ export const OpenStandards = () => {
           {/* Columna de texto */}
           <div className="order-2 lg:order-2">
             {/* Título */}
-            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight text-balance">
               Normas abiertas, mérito técnico y libre competencia
             </h3>
 
             {/* Párrafo principal */}
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-balance">
               Las soluciones técnicas desarrolladas y suministradas por LC Fasteners se alinean con
               los principios internacionalmente reconocidos de normalización, conforme a la Decisión
               sobre Principios para la Elaboración de Normas, Guías y Recomendaciones
@@ -53,7 +55,7 @@ export const OpenStandards = () => {
             {/* Introducción a badges */}
             <p className="text-gray-900 font-semibold text-lg mb-4">Este enfoque promueve:</p>
 
-            {/* Badges en lugar de lista */}
+            {/* Badges */}
             <div className="flex flex-wrap gap-3 mb-6">
               {principles.map((principle, index) => (
                 <span
@@ -68,7 +70,7 @@ export const OpenStandards = () => {
 
             {/* Texto de cierre */}
             <div className="bg-white border-l-4 border-gray-800 p-5 rounded-r">
-              <p className="text-gray-800 font-medium text-base leading-relaxed">
+              <p className="text-gray-800 font-medium text-base leading-relaxed text-balance">
                 En concordancia con el Acuerdo TBT, se evita cualquier forma de exclusividad técnica
                 no sustentada o restricción artificial del mercado.
               </p>

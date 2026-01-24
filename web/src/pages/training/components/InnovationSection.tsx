@@ -1,4 +1,5 @@
 import { Container } from "../../../ui/Container";
+import finaltraining from "../../../assets/training/finaltraining.webp";
 
 export const InnovationSection = () => {
   return (
@@ -53,7 +54,7 @@ export const InnovationSection = () => {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+                src={finaltraining}
                 alt="Sistema de sujeción industrial"
                 className="w-full h-full object-cover"
               />
