@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
   const navLinks = [
     { to: "/informativas/lcfasteners", label: "Inicio" },
-    { to: "/modelo-gestion", label: "Modelo de Gestión" },
-    { to: "/productos", label: "Productos" },
-    { to: "/validacion-tecnica", label: "Ensayos & Trazabilidad" },
-    { to: "/capacitacion", label: "Capacitación Técnica" },
+    { to: "modelo-gestion", label: "Modelo de Gestión" },
+    { to: "productos", label: "Productos" },
+    { to: "validacion-tecnica", label: "Ensayos & Trazabilidad" },
+    { to: "capacitacion", label: "Capacitación Técnica" },
   ];
   return (
     <footer className="w-full bg-navy-hover text-gray-300">
