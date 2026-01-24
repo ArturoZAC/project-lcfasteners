@@ -5,17 +5,13 @@ import { Header } from "../components/Header";
 export const AppLayout = () => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
 
       <main>
         <Outlet />
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 };

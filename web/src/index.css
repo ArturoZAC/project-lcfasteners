@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@import "tailwindcss";
+
+/* Tipografía base */
+html {
+  font-family: "Inter", sans-serif;
+}
+
+/* Tipografías personalizadas */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+button {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+@theme {
+  --color-navy-hover: #1e2140;
+  --color-navy: #274d94;
+}
