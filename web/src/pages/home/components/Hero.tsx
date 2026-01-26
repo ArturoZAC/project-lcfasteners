@@ -25,28 +25,28 @@ export const Hero = () => {
         {/* 3️⃣ BOTONES - Sin ruptura de palabras, whitespace-nowrap */}
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            to="/modelo-gestion"
+            to="modelo-gestion"
             className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
           >
             Modelo de Gestión
           </Link>
 
           <Link
-            to="/productos"
+            to="productos"
             className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
           >
             Productos
           </Link>
 
           <Link
-            to="/validacion-tecnica"
+            to="validacion-tecnica"
             className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
           >
             Ensayos & Trazabilidad
           </Link>
 
           <Link
-            to="/capacitacion"
+            to="capacitacion"
             className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
           >
             Capacitación & I+D+i
