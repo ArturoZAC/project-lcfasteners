@@ -34,11 +34,11 @@ export const TrainingSection = () => {
           className="relative min-h-[calc(100vh-95px)] flex items-center"
         >
           {/* Glow tech sutil */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.12),_transparent_60%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.12),transparent_60%)] pointer-events-none" />
 
           {/* Contenido centrado real */}
           <div className="relative w-full max-w-7xl mx-auto px-6 h-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full min-h-[520px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full min-h-130">
               {/* IZQUIERDA */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group h-full">
                 <img
@@ -47,7 +47,7 @@ export const TrainingSection = () => {
                   loading="eager"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent flex items-end">
                   <div className="p-8">
                     <h2 className="text-4xl font-bold text-white leading-tight">
                       Capacitación Técnica Especializada
