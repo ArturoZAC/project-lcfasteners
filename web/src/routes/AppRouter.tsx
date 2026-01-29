@@ -10,7 +10,7 @@ import { HomePage } from "../pages/home/HomePage";
 
 export const router = createBrowserRouter([
   {
-    path: "/informativas/lcfasteners",
+    path: "/informativas/lcfasteners/",
     element: <AppLayout />,
     children: [
       {

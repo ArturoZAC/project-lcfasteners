@@ -2,69 +2,81 @@ import { Banner } from "../../../ui/Banner";
 import training01 from "../../../assets/training/maintraining01.webp";
 import training02 from "../../../assets/training/maintraining02.webp";
 import training03 from "../../../assets/training/maintraining03.webp";
+import heroBlue from "../../../assets/training/FONDO.webp";
 
 export const TrainingSection = () => {
   return (
     <>
-      {/* MOBILE VERSION - Solo imagen hero full height */}
+      {/* ================= MOBILE ================= */}
       <div className="md:hidden">
         <Banner
           backgroundImage={training01}
-          overlay={true}
-          overlayColor="bg-gradient-to-t from-black/80 via-black/30 to-transparent"
-          className="min-h-[calc(100vh-95px)] flex items-center"
+          overlay
+          overlayColor="bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+          className="min-h-[calc(100vh-95px)] flex items-center justify-center"
         >
-          <div className="pb-8">
-            <h2 className="text-3xl font-bold text-white leading-tight">
-              Capacitación Técnica,
-              <br />
-              I+D+i y Transparencia
+          <div className="px-6 pb-10">
+            <h2 className="text-3xl font-bold text-white leading-tight text-balance">
+              Capacitación Técnica Especializada
+              {/* <br /> */}
+              {/* I+D+i y Transparencia */}
             </h2>
           </div>
         </Banner>
       </div>
 
-      {/* DESKTOP VERSION - Layout 3 imágenes */}
+      {/* ================= DESKTOP ================= */}
       <div className="hidden md:block">
-        <Banner backgroundColor="bg-gray-50" className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-100 lg:h-125">
-            {/* IZQUIERDA - Imagen grande con texto */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group min-h-75 lg:h-full">
-              <img
-                src={training01}
-                alt="Capacitación técnica profesional"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              {/* Overlay con texto */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent flex items-end">
-                <div className="p-6 md:p-8">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                    Capacitación Técnica,
-                    <br />
-                    I+D+i y Transparencia
-                  </h2>
+        <Banner
+          backgroundImage={heroBlue}
+          overlay
+          overlayColor="bg-gradient-to-br from-blue-950/80 via-slate-900/70 to-white/10"
+          className="relative min-h-[calc(100vh-95px)] flex items-center"
+        >
+          {/* Glow tech sutil */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.12),_transparent_60%)] pointer-events-none" />
+
+          {/* Contenido centrado real */}
+          <div className="relative w-full max-w-7xl mx-auto px-6 h-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full min-h-[520px]">
+              {/* IZQUIERDA */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl group h-full">
+                <img
+                  src={training01}
+                  alt="Capacitación técnica profesional"
+                  loading="eager"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
+                  <div className="p-8">
+                    <h2 className="text-4xl font-bold text-white leading-tight">
+                      Capacitación Técnica Especializada
+                      {/* <br /> */}
+                      {/* I+D+i y Transparencia */}
+                    </h2>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* DERECHA - Dos imágenes apiladas verticalmente */}
-            <div className="flex flex-col gap-6 min-h-75 lg:h-full">
-              {/* Imagen superior */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xl group flex-1 min-h-35">
-                <img
-                  src={training02}
-                  alt="Ingeniería industrial"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+              {/* DERECHA */}
+              <div className="flex flex-col gap-6 h-full">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl group flex-1">
+                  <img
+                    src={training02}
+                    alt="Ingeniería industrial"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
 
-              {/* Imagen inferior */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xl group flex-1 min-h-35">
-                <img
-                  src={training03}
-                  alt="Innovación y desarrollo"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl group flex-1">
+                  <img
+                    src={training03}
+                    alt="Innovación y desarrollo"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
               </div>
             </div>
           </div>

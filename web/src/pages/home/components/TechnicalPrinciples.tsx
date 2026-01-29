@@ -49,16 +49,16 @@ export const TechnicalPrinciples = () => {
         {/* 4️⃣ Cards Grid - Sin cortes silábicos en títulos y textos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {principles.map((principle, index) => {
-            const Icon = principle.icon;
+            // const Icon = principle.icon;
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-white p-6 rounded-lg hover:shadow-2xl transition-shadow shadow-sm"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
-                </div>
+                </div> */}
 
                 {/* Title - Sin cortes silábicos */}
                 <h3 className="text-lg font-semibold text-navy mb-3 [hyphens:none] [word-break:normal]">

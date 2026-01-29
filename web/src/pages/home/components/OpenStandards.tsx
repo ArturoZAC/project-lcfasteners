@@ -1,80 +1,57 @@
 import { Container } from "../../../ui/Container";
-import initial02 from "../../../assets/home/initial02.webp";
-import initial03 from "../../../assets/home/initial03.webp";
 
 export const OpenStandards = () => {
   const principles = [
     "Transparencia técnica",
     "Neutralidad de marca",
-    "Evaluación basada en mérito técnico verificable",
-    "Libre competencia y no discriminación",
+    "Mérito técnico verificable",
+    "Libre competencia",
   ];
 
   return (
-    <section className="w-full bg-gray-50 py-16 md:py-20">
+    <section className="w-full bg-gray-50 pb-16 md:pb-20">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Columna de imágenes */}
-          <div className="order-1 lg:order-1">
-            <div className="flex flex-col gap-4">
-              {/* Imagen 1 - Rollo de material */}
-              <div className="relative rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src={initial02}
-                  alt="Material metálico enrollado"
-                  className="w-full h-64 md:h-72 object-cover"
-                />
-              </div>
-              {/* Imagen 2 - Equipo industrial */}
-              <div className="relative rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src={initial03}
-                  alt="Equipo de pruebas industrial"
-                  className="w-full h-64 md:h-72 object-cover"
-                />
-              </div>
-            </div>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Columna derecha - Contenido */}
+          <div>
+            {/* Etiqueta superior */}
+            <p className="text-xs md:text-sm font-semibold tracking-wider text-gray-500 uppercase mb-4">
+              Normas abiertas y marco normativo
+            </p>
 
-          {/* Columna de texto */}
-          <div className="order-2 lg:order-2">
             {/* Título */}
-            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight text-balance">
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
               Normas abiertas, mérito técnico y libre competencia
             </h3>
 
             {/* Párrafo principal */}
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-balance">
-              Las soluciones técnicas desarrolladas y suministradas por LC Fasteners se alinean con
-              los principios internacionalmente reconocidos de normalización, conforme a la Decisión
-              sobre Principios para la Elaboración de Normas, Guías y Recomendaciones
-              Internacionales del Comité de Obstáculos Técnicos al Comercio (OTC) de la Organización
-              Mundial del Comercio.
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              LC Fasteners desarrolla y suministra soluciones técnicas en conformidad con los
+              principios internacionalmente reconocidos de normalización, en alineación con la
+              Organización Mundial del Comercio (OMC), el Comité de Obstáculos Técnicos al Comercio
+              (OTC) y el Acuerdo sobre Obstáculos Técnicos al Comercio (Acuerdo TBT).
             </p>
 
-            {/* Introducción a badges */}
-            <p className="text-gray-900 font-semibold text-lg mb-4">Este enfoque promueve:</p>
+            {/* Párrafo secundario */}
+            {/* <p className="text-gray-700 text-lg leading-relaxed">
+              Este marco garantiza que las decisiones técnicas se sustenten en criterios objetivos,
+              verificables y no discriminatorios, evitando exclusividades técnicas injustificadas o
+              restricciones artificiales del mercado.
+            </p> */}
+          </div>
 
-            {/* Badges */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              {principles.map((principle, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200 hover:bg-blue-100 transition-colors"
-                >
-                  <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
-                  {principle}
-                </span>
+          {/* Columna izquierda - Lista */}
+          <div>
+            <p className="text-gray-900 font-semibold text-lg mb-4">Principios aplicados:</p>
+
+            <ul className="space-y-3">
+              {principles.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-blue-600 mr-3 mt-1 shrink-0">●</span>
+                  <span className="text-gray-700 text-base">{item}</span>
+                </li>
               ))}
-            </div>
-
-            {/* Texto de cierre */}
-            <div className="bg-white border-l-4 border-gray-800 p-5 rounded-r">
-              <p className="text-gray-800 font-medium text-base leading-relaxed text-balance">
-                En concordancia con el Acuerdo TBT, se evita cualquier forma de exclusividad técnica
-                no sustentada o restricción artificial del mercado.
-              </p>
-            </div>
+            </ul>
           </div>
         </div>
       </Container>

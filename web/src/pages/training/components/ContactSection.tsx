@@ -83,13 +83,13 @@ export const ContactSection = () => {
             </div>
 
             {/* Imagen decorativa */}
-            <div className="rounded-2xl overflow-hidden">
+            {/* <div className="rounded-2xl overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
                 alt="Productos industriales"
                 className="w-full h-48 object-cover"
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Columna Derecha - Formulario */}

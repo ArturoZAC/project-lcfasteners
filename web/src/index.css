@@ -14,17 +14,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", serif;
+  /* font-family: "Playfair Display", serif; */
 }
 
 button {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", serif;
+  /* font-family: "Playfair Display", serif; */
   font-weight: 600;
 }
 
 @theme {
   --color-navy-hover: #1e2140;
   --color-navy: #274d94;
+  --color-textos: #1f2933;
 }
 
 /* Desactivar hyphenation globalmente en mobile */

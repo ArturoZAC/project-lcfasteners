@@ -1,13 +1,14 @@
 import {
-  IconApiApp,
   IconCircleCheckFilled,
   IconCloud,
   IconDroplets,
   IconPointerCog,
-  IconSwipe,
   IconThermometer,
 } from "@tabler/icons-react";
 import { Container } from "../../../ui/Container";
+import product01 from "../../../assets/products/firstProduct.webp";
+import product02 from "../../../assets/products/secondProduct.webp";
+import product03 from "../../../assets/products/thirdProduct.webp";
 
 export const CoatingsProtection = () => {
   const criteria = [
@@ -25,16 +26,51 @@ export const CoatingsProtection = () => {
     },
   ];
 
+  // const coatings = [
+  //   {
+  //     name: "Zinc / Aluminium Flake",
+  //     badge: "ASME F3393 · ISO 10683",
+  //     badgeColor: "bg-gray-200 text-gray-700",
+  //     borderColor: "border-t-gray-400",
+  //     description:
+  //       "Recubrimiento no electrolítico de láminas de Zinc y Aluminio, conforme a normas internacionales, diseñado para evitar fragilización por hidrógeno y asegurar desempeño técnico verificable.",
+  //     feature: "Alta resistencia a la corrosión",
+  //     featureIcon: IconCircleCheckFilled,
+  //   },
+  //   {
+  //     name: "Fluororesina",
+  //     badge: "BAJO FRICCIÓN",
+  //     badgeColor: "bg-blue-100 text-blue-700",
+  //     borderColor: "border-t-blue-400",
+  //     description:
+  //       "Recubrimiento base PTFE/Xylan con excelente resistencia química y propiedades de lubricidad controlada para montaje y desmontaje repetitivo.",
+  //     feature: "Resistencia química",
+  //     featureIcon: IconDroplets,
+  //   },
+  //   {
+  //     name: "Fluorosilicona",
+  //     badge: "ALTO DESEMPEÑO",
+  //     badgeColor: "bg-indigo-100 text-indigo-700",
+  //     borderColor: "border-t-indigo-400",
+  //     description:
+  //       "Recubrimiento funcional con estabilidad térmica y baja variación de fricción, adecuado para aplicaciones críticas con requerimientos de control técnico.",
+  //     feature: "Estabilidad térmica",
+  //     featureIcon: IconCircleCheckFilled,
+  //   },
+  // ];
+
   const coatings = [
     {
-      name: "Zinc Flake",
-      badge: "ALTA RESISTENCIA",
+      name: "Zinc / Aluminium Flake",
+      badge: "ASME F3393 · ISO 10683",
       badgeColor: "bg-gray-200 text-gray-700",
       borderColor: "border-t-gray-400",
       description:
-        "Recubrimiento no electrolítico de láminas de Zinc y Aluminio. Ideal para evitar fragilización por hidrógeno.",
-      feature: "1000+ hrs Niebla Salina",
+        "Recubrimiento no electrolítico de láminas de Zinc y Aluminio, conforme a normas internacionales, diseñado para evitar fragilización por hidrógeno y asegurar desempeño técnico verificable.",
+      feature: "Alta resistencia a la corrosión",
       featureIcon: IconCircleCheckFilled,
+      image: product01,
+      imageAlt: "Recubrimiento Zinc Aluminium Flake conforme ASME F3393 e ISO 10683",
     },
     {
       name: "Fluororesina",
@@ -42,29 +78,23 @@ export const CoatingsProtection = () => {
       badgeColor: "bg-blue-100 text-blue-700",
       borderColor: "border-t-blue-400",
       description:
-        "Base PTFE/Xylan. Excelente resistencia química y lubricidad para fácil montaje y desmontaje.",
-      feature: "Resistencia Química",
+        "Recubrimiento base PTFE/Xylan con excelente resistencia química y propiedades de lubricidad controlada para montaje y desmontaje repetitivo.",
+      feature: "Resistencia química",
       featureIcon: IconDroplets,
+      image: product02,
+      imageAlt: "Recubrimiento Fluororesina PTFE para baja fricción y resistencia química",
     },
     {
-      name: "HDG",
-      badge: "ASTM A153",
-      badgeColor: "bg-gray-200 text-gray-700",
-      borderColor: "border-t-gray-400",
+      name: "Fluorosilicona",
+      badge: "ALTO DESEMPEÑO",
+      badgeColor: "bg-indigo-100 text-indigo-700",
+      borderColor: "border-t-indigo-400",
       description:
-        "Galvanizado por inmersión en caliente. Máxima protección de barrera para ambientes marinos.",
-      feature: "Ambientes Marinos",
-      featureIcon: IconSwipe,
-    },
-    {
-      name: "Zincado",
-      badge: "ESTÁNDAR",
-      badgeColor: "bg-gray-100 text-gray-600",
-      borderColor: "border-t-gray-300",
-      description:
-        "Acabado estético y protección moderada. Disponible en pasivados claros y amarillos (Cr3+).",
-      feature: "Versatilidad",
-      featureIcon: IconApiApp,
+        "Recubrimiento funcional con estabilidad térmica y baja variación de fricción, adecuado para aplicaciones críticas con requerimientos de control técnico.",
+      feature: "Estabilidad térmica",
+      featureIcon: IconCircleCheckFilled,
+      image: product03,
+      imageAlt: "Recubrimiento Fluorosilicona para aplicaciones industriales de alto desempeño",
     },
   ];
 
@@ -82,7 +112,7 @@ export const CoatingsProtection = () => {
           </p>
         </div>
 
-        {/* Criterios de selección */}
+        {/* Criterios */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {criteria.map((criterion, index) => {
             const IconComponent = criterion.icon;
@@ -98,32 +128,48 @@ export const CoatingsProtection = () => {
           })}
         </div>
 
-        {/* Tarjetas de recubrimientos */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Tarjetas */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {coatings.map((coating, index) => {
             const FeatureIcon = coating.featureIcon;
             return (
               <div
                 key={index}
-                className={`bg-white rounded-lg shadow-md border-t-4 ${coating.borderColor} p-6 hover:shadow-lg transition-shadow`}
+                className={`bg-white rounded-lg shadow-md border-t-4 ${coating.borderColor} hover:shadow-lg transition-shadow overflow-hidden`}
               >
-                {/* Header de la tarjeta */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{coating.name}</h3>
-                  <span
-                    className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${coating.badgeColor}`}
-                  >
-                    {coating.badge}
-                  </span>
+                {/* Contenido */}
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{coating.name}</h3>
+                    <span
+                      className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${coating.badgeColor}`}
+                    >
+                      {coating.badge}
+                    </span>
+                  </div>
+
+                  {/* Descripción */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 h-22.5">
+                    {coating.description}
+                  </p>
+
+                  {/* Feature */}
+                  <div className="flex items-center gap-2 text-gray-900 font-medium text-sm">
+                    <FeatureIcon className="w-4 h-4" />
+                    <span>{coating.feature}</span>
+                  </div>
                 </div>
 
-                {/* Descripción */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{coating.description}</p>
-
-                {/* Feature destacada */}
-                <div className="flex items-center gap-2 text-gray-900 font-medium text-sm">
-                  <FeatureIcon className="w-4 h-4" />
-                  <span>{coating.feature}</span>
+                {/* Imagen con proporción controlada */}
+                <div className="w-full bg-gray-50 aspect-video overflow-hidden">
+                  <img
+                    src={coating.image}
+                    alt={coating.imageAlt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    draggable={false}
+                  />
                 </div>
               </div>
             );

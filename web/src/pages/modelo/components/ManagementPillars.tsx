@@ -15,42 +15,42 @@ export const ManagementPillars = () => {
       icon: IconBuildingBank,
       title: "Gobernanza Técnica",
       description:
-        "Supervisión experta de especificaciones y estándares internacionales en cada orden de compra.",
+        "Supervisión experta del marco legal, regulatorio y normativo aplicable (OSINERGMIN, códigos de diseño, normas internacionales).",
     },
     {
       id: "02",
       icon: IconShieldCheckFilled,
       title: "Autoridad de Calidad",
       description:
-        "Protocolos de inspección rigurosos y validación de certificados de origen y composición.",
+        "Validación documental, control de certificados, cumplimiento de especificaciones y requisitos técnicos definidos.",
     },
     {
       id: "03",
       icon: IconFilter2Check,
       title: "Normas Abiertas",
       description:
-        "Flexibilidad para operar bajo estándares ASTM, ISO, DIN y especificaciones propietarias del cliente.",
+        "Aplicación de estándares ASTM, ISO, ASME y normas internacionales verificables, evitando exclusividades técnicas no sustentadas.",
     },
     {
       id: "04",
       icon: IconAffiliateFilled,
       title: "Integración Transversal",
       description:
-        "Sincronización total entre logística, técnica y calidad para entregas Just-in-Time.",
+        "Coordinación entre ingeniería, calidad, logística y soporte técnico bajo un mismo marco normativo.",
     },
     {
       id: "05",
       icon: IconTrendingUp,
       title: "Trazabilidad",
       description:
-        "Rastreo completo desde la materia prima hasta la entrega final en obra o planta.",
+        "Rastreo documental desde materia prima hasta entrega final, conforme a requisitos contractuales y regulatorios.",
     },
     {
       id: "06",
       icon: IconArrowsRandom,
       title: "Mejora continua, I+D+i aplicada",
       description:
-        "La investigación aplicada y la innovación orientada a desempeño forman parte del proceso permanente de mejora y actualización normativa.",
+        "Actualización permanente basada en cambios normativos, experiencia de campo y desempeño técnico.",
     },
   ];
 
@@ -68,12 +68,12 @@ export const ManagementPillars = () => {
           </div>
 
           {/* Texto descriptivo */}
-          <div className="lg:max-w-md">
+          {/* <div className="lg:max-w-md">
             <p className="text-black text-sm md:text-base italic border-l-4 border-gray-200 pl-4">
               Nuestra metodología asegura que cada componente cumpla con las especificaciones
               críticas del sector.
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Grid de pilares */}

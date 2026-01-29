@@ -1,22 +1,27 @@
 import { Banner } from "../../../ui/Banner";
-import fondo from "../../../assets/products/productosfondo.webp";
+import fondo from "../../../assets/products/heroProducts.webp";
+// import { RadialHighlight } from "../../../ui/RadialHighlight";
 
 export const ProductsHero = () => {
   return (
     <Banner
       backgroundImage={fondo}
       overlay={true}
-      overlayColor="bg-black/70"
+      overlayColor="bg-black/40"
       className="py-24 md:py-32 lg:py-40 min-h-[calc(100vh-95px)] flex items-center"
+      // backgroundEffect={<RadialHighlight />}
     >
       <div className="max-w-3xl">
         {/* Título principal */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"> */}
           Productos, Marco Normativo y Cumplimiento Técnico
         </h1>
 
         {/* Descripción */}
-        <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
+        {/* <p className="text-gray-800 text-lg md:text-xl leading-relaxed mb-8"> */}
+        <p className="text-white text-lg md:text-xl leading-relaxed mb-8">
+          {/* <p className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-8"> */}
           Excelencia industrial y aseguramiento de calidad en cada componente bajo estándares
           internacionales.
         </p>

@@ -1,8 +1,8 @@
 import { IconAdjustmentsHorizontal, IconLayersIntersect2, IconSettings } from "@tabler/icons-react";
 import { Container } from "../../../ui/Container";
 
-import firstimage from "../../../assets/products/productoejemplo01.webp";
-import secondimage from "../../../assets/products/product02.webp";
+// import firstimage from "../../../assets/products/productoejemplo01.webp";
+import secondimage from "../../../assets/products/secondSection.webp";
 
 export const IndustrialFasteners = () => {
   const features = [
@@ -37,7 +37,8 @@ export const IndustrialFasteners = () => {
           <div>
             {/* Título */}
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
-              Sujetadores Industriales y Cumplimiento ASTM/ISO
+              Trazabilidad Total y Control de Calidad
+              {/* Sujetadores Industriales y Cumplimiento ASTM/ISO */}
             </h2>
 
             {/* Descripción */}
@@ -73,7 +74,7 @@ export const IndustrialFasteners = () => {
           </div>
 
           {/* Columna de imágenes */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {/* Imagen 1 - Tornillo */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
@@ -84,13 +85,13 @@ export const IndustrialFasteners = () => {
             </div>
 
             {/* Imagen 2 - Placa metálica */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            {/* <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={firstimage}
                 alt="Placa de montaje industrial"
                 className="w-full h-80 object-cover"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
