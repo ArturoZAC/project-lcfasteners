@@ -1,27 +1,67 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useForm } from "react-hook-form";
 import { Container } from "../../../ui/Container";
 import { IconMail, IconPhone /* IconMapPin */ } from "@tabler/icons-react";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema, type ContactSchemaType } from "../schemas/contact.schema";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { getEnvs } from "../../../helpers/getEnvs";
+import { FormAlert } from "../utils/FormAlert";
+
+const { VITE_API_URL, VITE_RECAPTCHA_SITE_KEY } = getEnvs();
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    message: "",
+  const [isLoading, setIsLoading] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [alert, setAlert] = useState<{
+    type: "success" | "error" | "warning";
+    message: string;
+  } | null>(null);
+
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors },
+  } = useForm<ContactSchemaType>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      fullName: "",
+      phone: "",
+      email: "",
+      company: "",
+      message: "",
+    },
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const onSubmit = async (data: ContactSchemaType) => {
+    if (!captchaToken) {
+      setAlert({ type: "warning", message: "Es necesario marcar el captcha" });
+      return;
+    }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí manejas el envío del formulario
-    console.log(formData);
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${VITE_API_URL}/enviar-contacto`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, captcha: captchaToken }),
+      });
+
+      if (!res.ok) throw new Error("Error al enviar el formulario");
+
+      reset();
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
+      setAlert({ type: "success", message: "Mensaje enviado con éxito" });
+    } catch {
+      setAlert({ type: "error", message: "Error al enviar el formulario" });
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setAlert(null), 3000);
+    }
   };
 
   return (
@@ -70,26 +110,7 @@ export const ContactSection = () => {
                   </a>
                 </div>
               </div>
-
-              {/* <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
-                  <IconMapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Ubicación</p>
-                  <p className="text-white">Lima, Perú | Planta LATAM</p>
-                </div>
-              </div> */}
             </div>
-
-            {/* Imagen decorativa */}
-            {/* <div className="rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
-                alt="Productos industriales"
-                className="w-full h-48 object-cover"
-              />
-            </div> */}
           </div>
 
           {/* Columna Derecha - Formulario */}
@@ -100,8 +121,8 @@ export const ContactSection = () => {
                 Complete el formulario para recibir asesoría técnica personalizada.
               </p>
             </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {alert && <FormAlert type={alert.type} message={alert.message} />}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Nombre y Empresa */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -110,13 +131,13 @@ export const ContactSection = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    {...register("fullName")}
                     placeholder="Ej. Juan Pérez"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
-                    required
                   />
+                  {errors.fullName && (
+                    <p className="text-red-500 mt-1 text-sm">{errors.fullName.message}</p>
+                  )}
                 </div>
 
                 <div>
@@ -125,13 +146,13 @@ export const ContactSection = () => {
                   </label>
                   <input
                     type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
+                    {...register("company")}
                     placeholder="Nombre de su organización"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
-                    required
                   />
+                  {errors.company && (
+                    <p className="text-red-500 mt-1 text-sm">{errors.company.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -143,13 +164,13 @@ export const ContactSection = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    {...register("email")}
                     placeholder="jperez@empresa.com"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
-                    required
                   />
+                  {errors.email && (
+                    <p className="text-red-500 mt-1 text-sm">{errors.email.message}</p>
+                  )}
                 </div>
 
                 <div>
@@ -158,12 +179,13 @@ export const ContactSection = () => {
                   </label>
                   <input
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
+                    {...register("phone")}
                     placeholder="+51 900 000 000"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
                   />
+                  {errors.phone && (
+                    <p className="text-red-500 mt-1 text-sm">{errors.phone.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -173,30 +195,47 @@ export const ContactSection = () => {
                   Mensaje
                 </label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                  {...register("message")}
                   rows={5}
                   placeholder="Describa su requerimiento técnico o consulta sobre productos..."
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
-                  required
+                />
+                {errors.message && (
+                  <p className="text-red-500 mt-1 text-sm">{errors.message.message}</p>
+                )}
+              </div>
+
+              <div className="flex justify-center max-w-full">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={VITE_RECAPTCHA_SITE_KEY}
+                  onChange={(token: any) => setCaptchaToken(token)}
                 />
               </div>
 
               {/* Botón Submit */}
               <button
                 type="submit"
-                className="w-full md:w-auto px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:bg-gray-500 transition flex items-center justify-center gap-2"
+                className="cursor-pointer w-full px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:bg-gray-500 transition flex items-center justify-center gap-2"
               >
-                ENVIAR CONSULTA
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
+                {isLoading ? (
+                  <div className="flex items-center gap-2 justify-center">
+                    {/* Spinner */}
+                    <div className="w-5 h-5 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto"></div>
+                  </div>
+                ) : (
+                  <>
+                    ENVIAR CONSULTA
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </>
+                )}
               </button>
 
               {/* Disclaimer */}
