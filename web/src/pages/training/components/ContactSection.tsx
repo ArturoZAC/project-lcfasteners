@@ -42,15 +42,17 @@ export const ContactSection = () => {
       return;
     }
 
+    console.log({ data });
+
     setIsLoading(true);
     try {
-      const res = await fetch(`${VITE_API_URL}/enviar-contacto`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, captcha: captchaToken }),
-      });
+      // const res = await fetch(`${VITE_API_URL}/enviar-contacto`, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ ...data, captcha: captchaToken }),
+      // });
 
-      if (!res.ok) throw new Error("Error al enviar el formulario");
+      // if (!res.ok) throw new Error("Error al enviar el formulario");
 
       reset();
       recaptchaRef.current?.reset();
