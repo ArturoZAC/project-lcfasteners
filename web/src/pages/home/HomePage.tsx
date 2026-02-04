@@ -1,6 +1,5 @@
 import { Compliance } from "./components/Compliance";
 import { Hero } from "./components/Hero";
-import { InstitutionalDisclaimer } from "./components/InstitutionalDisclaimer";
 // import { HeroTest } from "./components/HeroTest";
 import { OpenStandards } from "./components/OpenStandards";
 import { TechnicalApproach } from "./components/TechnicalApproach";
@@ -15,7 +14,6 @@ export const HomePage = () => {
       <Compliance />
       <TechnicalApproach />
       <OpenStandards />
-      <InstitutionalDisclaimer />
     </>
   );
 };

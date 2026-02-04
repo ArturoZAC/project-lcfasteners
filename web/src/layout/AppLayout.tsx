@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { ScrollToTop } from "../components/ScrollToTop";
+import { InstitutionalDisclaimer } from "../ui/InstitutionalDisclaimer";
 
 export const AppLayout = () => {
   return (
@@ -13,6 +14,7 @@ export const AppLayout = () => {
         <Outlet />
       </main>
 
+      <InstitutionalDisclaimer />
       <Footer />
     </>
   );

@@ -47,14 +47,16 @@ export const Hero = () => {
               to="validacion-tecnica"
               className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
             >
-              Ensayos & Trazabilidad
+              {/* Ensayos & Trazabilidad */}
+              Validación Técnica
             </Link>
 
             <Link
-              to="capacitacion"
+              to="capacitacion-tecnica"
               className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold hover:bg-navy-hover transition rounded-2xl whitespace-nowrap"
             >
-              Capacitación & I+D+i
+              {/* Capacitación & I+D+i */}
+              Capacitación Técnica
             </Link>
           </div>
         </div>

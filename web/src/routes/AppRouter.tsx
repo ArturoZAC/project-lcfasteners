@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
         element: <ValidPage />,
       },
       {
-        path: "capacitacion",
+        path: "capacitacion-tecnica",
         element: <TrainingPage />,
       },
     ],

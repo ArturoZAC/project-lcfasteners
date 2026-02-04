@@ -14,8 +14,9 @@ export const Header = () => {
     { to: "/informativas/lcfasteners", label: "Inicio", end: true },
     { to: "modelo-gestion", label: "Modelo de Gestión" },
     { to: "productos", label: "Productos" },
-    { to: "validacion-tecnica", label: "Ensayos & Trazabilidad" },
-    { to: "capacitacion", label: "Capacitación Técnica" },
+    { to: "validacion-tecnica", label: "Validación Técnica" },
+    // { to: "validacion-tecnica", label: "Ensayos & Trazabilidad" },
+    { to: "capacitacion-tecnica", label: "Capacitación Técnica" },
   ];
 
   return (

@@ -6,10 +6,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactSchemaType } from "../schemas/contact.schema";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { getEnvs } from "../../../helpers/getEnvs";
+// import { getEnvs } from "../../../helpers/getEnvs";
 import { FormAlert } from "../utils/FormAlert";
 
-const { VITE_API_URL, VITE_RECAPTCHA_SITE_KEY } = getEnvs();
+// const { VITE_API_URL, VITE_RECAPTCHA_SITE_KEY } = getEnvs();
 
 export const ContactSection = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -205,13 +205,13 @@ export const ContactSection = () => {
                 )}
               </div>
 
-              <div className="flex justify-center max-w-full">
+              {/* <div className="flex justify-center max-w-full">
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={VITE_RECAPTCHA_SITE_KEY}
                   onChange={(token: any) => setCaptchaToken(token)}
                 />
-              </div>
+              </div> */}
 
               {/* Botón Submit */}
               <button
