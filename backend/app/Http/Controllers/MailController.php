@@ -13,26 +13,26 @@ class MailController extends Controller
   private function validarCaptcha(string $captcha, Request $request): bool
   {
     //*Esto es para produccion:
-    // $response = Http::asForm()->post(
-    //   'https://www.google.com/recaptcha/api/siteverify',
-    //   [
-    //     'secret' => config('services.recaptcha.secret'),
-    //     'response' => $captcha,
-    //     'remoteip' => $request->ip(),
-    //   ]
-    // );
+    $response = Http::asForm()->post(
+      'https://www.google.com/recaptcha/api/siteverify',
+      [
+        'secret' => config('services.recaptcha.secret'),
+        'response' => $captcha,
+        'remoteip' => $request->ip(),
+      ]
+    );
 
     //*Esto es para desarrollo:
-    $response = Http::asForm()
-      ->withoutVerifying()
-      ->post(
-        'https://www.google.com/recaptcha/api/siteverify',
-        [
-          'secret' => config('services.recaptcha.secret'),
-          'response' => $captcha,
-          'remoteip' => $request->ip(),
-        ]
-      );
+    // $response = Http::asForm()
+    //   ->withoutVerifying()
+    //   ->post(
+    //     'https://www.google.com/recaptcha/api/siteverify',
+    //     [
+    //       'secret' => config('services.recaptcha.secret'),
+    //       'response' => $captcha,
+    //       'remoteip' => $request->ip(),
+    //     ]
+    //   );
 
     $result = $response->json();
 

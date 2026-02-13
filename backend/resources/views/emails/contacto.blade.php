@@ -194,8 +194,8 @@
                                       <td align="left" style="padding:0;Margin:0;font-size:0px"><a target="_blank"
                                           href="#"
                                           style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#F6C6EA;font-size:14px"><img
-                                            class="adapt-img"
-                                            src="https://alphamininggroup.com/assets/ALPM-96w6SiSg.png" alt="logo"
+                                            class="adapt-img" src="https://lcfclatam.com/assets/logo-v2-GS7A0xPL.png"
+                                            alt="logo"
                                             style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
                                             width="180"></a></td>
                                     </tr>
