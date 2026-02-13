@@ -10,7 +10,9 @@ export const DocumentaryTraceability = () => {
             Trazabilidad Técnica Documentada
           </h2>
           <p className="text-gray-600 text-base">
-            Control, registro y respaldo técnico verificable.
+            {/* Control, registro y respaldo técnico verificable. */}
+            Identificación por lote, control documental y certificación técnica conforme a norma
+            internacional.
           </p>
         </div>
 

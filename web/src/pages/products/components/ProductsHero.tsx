@@ -3,6 +3,14 @@ import fondo from "../../../assets/products/heroProducts.webp";
 // import { RadialHighlight } from "../../../ui/RadialHighlight";
 
 export const ProductsHero = () => {
+  const standards = [
+    "ASTM F3125",
+    "ASTM A193",
+    "ASTM A563",
+    "ASTM F1554",
+    "Sistemas conforme ASTM F3393",
+  ];
+
   return (
     <Banner
       backgroundImage={fondo}
@@ -14,29 +22,29 @@ export const ProductsHero = () => {
       <div className="max-w-3xl">
         {/* Título principal */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"> */}
           Productos, Marco Normativo y Cumplimiento Técnico
         </h1>
 
         {/* Descripción */}
-        {/* <p className="text-gray-800 text-lg md:text-xl leading-relaxed mb-8"> */}
         <p className="text-white text-lg md:text-xl leading-relaxed mb-8">
-          {/* <p className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-8"> */}
-          Excelencia industrial y aseguramiento de calidad en cada componente bajo estándares
-          internacionales.
+          Sujetadores industriales definidos técnicamente conforme a norma aplicable, clase, grado,
+          condición de servicio y sistema de revestimiento compatible.
         </p>
 
-        {/* Botones de acción */}
-        {/* <div className="flex flex-col sm:flex-row gap-4">
-          <button className="inline-flex items-center justify-center px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold rounded-lg transition-colors">
-            <IconDownload className="w-5 h-5 mr-2" />
-            Descargar Catálogo
-          </button>
-          <button className="inline-flex items-center justify-center px-6 py-3 bg-transparent hover:bg-white/10 text-white font-semibold rounded-lg border-2 border-white/50 hover:border-white transition-colors">
-            <IconFileTextFilled className="w-5 h-5 mr-2" />
-            Consultar Normas
-          </button>
-        </div> */}
+        {/* Normas incluidas */}
+        <div className="mt-8">
+          <p className="text-white/80 text-sm md:text-base font-semibold mb-4">Incluye:</p>
+          <div className="flex flex-wrap gap-3">
+            {standards.map((standard, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium hover:bg-white/20 transition-all duration-300"
+              >
+                {standard}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </Banner>
   );

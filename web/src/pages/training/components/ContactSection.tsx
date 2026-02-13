@@ -70,46 +70,64 @@ export const ContactSection = () => {
     <section className="w-full bg-gray-50 py-16 md:py-20">
       <Container>
         <div className="grid lg:grid-cols-2 gap-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
-          {/* Columna Izquierda - Info de Contacto */}
-          <div className="bg-navy-hover text-white p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Contacto Técnico
-              <br />y Comercial
-            </h2>
+          {/* Columna Izquierda - Info de Contacto con imagen de fondo */}
+          <div
+            className="relative text-white p-8 md:p-12"
+            style={{
+              backgroundImage: `url(https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2070&auto=format&fit=crop)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Overlay negro */}
+            <div className="absolute inset-0 bg-black/80" />
 
-            <p className="text-gray-300 mb-8">
-              Soporte especializado para el cumplimiento normativo en proyectos de infraestructura y
-              minería.
-            </p>
+            {/* Contenido sobre el overlay */}
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Contacto Técnico
+                <br />y Comercial
+              </h2>
 
-            {/* Información de Contacto */}
-            <div className="space-y-6 mb-12">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
-                  <IconMail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Escríbanos</p>
-                  <a
-                    href="mailto:tecnico@lcfasteners.com"
-                    className="text-white hover:text-gray-300 transition"
-                  >
-                    tecnico@lcfasteners.com
-                  </a>
-                </div>
-              </div>
+              <p className="text-gray-300 mb-8">
+                Soporte especializado para el cumplimiento normativo en proyectos de infraestructura
+                y minería.
+              </p>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
-                  <IconPhone className="w-5 h-5" />
+              {/* Información de Contacto */}
+              <div className="space-y-6 mb-12">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <IconMail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">
+                      Escríbanos
+                    </p>
+                    <a
+                      href="mailto:tecnico@lcfasteners.com"
+                      className="text-white hover:text-gray-300 transition"
+                    >
+                      tecnico@lcfasteners.com
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">
-                    Línea Directa
-                  </p>
-                  <a href="tel:+5112345678" className="text-white hover:text-gray-300 transition">
-                    +51 957 194 775
-                  </a>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <IconPhone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">
+                      Línea Directa
+                    </p>
+                    <a
+                      href="tel:+51957194775"
+                      className="text-white hover:text-gray-300 transition"
+                    >
+                      +51 957 194 775
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -218,7 +236,8 @@ export const ContactSection = () => {
               {/* Botón Submit */}
               <button
                 type="submit"
-                className="cursor-pointer w-full px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:bg-gray-500 transition flex items-center justify-center gap-2"
+                disabled={isLoading}
+                className="cursor-pointer w-full px-8 py-4 bg-navy text-white font-semibold rounded-lg hover:bg-gray-500 transition flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <div className="flex items-center gap-2 justify-center">
@@ -242,9 +261,8 @@ export const ContactSection = () => {
 
               {/* Disclaimer */}
               <p className="text-xs text-gray-500 italic">
-                La información enviada será tratada bajo estrictos protocolos de confidencialidad
-                técnica B2B. Al enviar este formulario, usted acepta nuestra política de gestión de
-                datos industriales.
+                La información será tratada bajo protocolos estrictos de confidencialidad técnica
+                B2B.
               </p>
             </form>
           </div>

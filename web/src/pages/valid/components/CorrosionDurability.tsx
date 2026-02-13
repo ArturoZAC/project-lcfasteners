@@ -7,15 +7,15 @@ export const CorrosionDurability = () => {
   const standards = [
     {
       title: "ASTM F3393",
-      description: "Validación de sistemas Zinc / Aluminio Flake bajo condiciones controladas.",
+      // description: "Validación de sistemas Zinc / Aluminio Flake bajo condiciones controladas.",
     },
     {
       title: "ISO 10683",
-      description: "Requisitos de desempeño para recubrimientos no electrolíticos.",
+      // description: "Requisitos de desempeño para recubrimientos no electrolíticos.",
     },
     {
       title: "ASTM B117",
-      description: "Ensayo de niebla salina para evaluación de resistencia a la corrosión.",
+      // description: "Ensayo de niebla salina para evaluación de resistencia a la corrosión.",
     },
   ];
 
@@ -32,8 +32,10 @@ export const CorrosionDurability = () => {
 
             {/* Descripción */}
             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
-              Los sistemas de revestimiento se validan según condiciones reales de servicio,
-              evaluando su comportamiento frente a ambientes corrosivos severos.
+              {/* Los sistemas de revestimiento se validan según condiciones reales de servicio, */}
+              {/* evaluando su comportamiento frente a ambientes corrosivos severos.  */}
+              Validación bajo condiciones controladas y evaluación frente a ambientes corrosivos
+              severos.
             </p>
 
             {/* Lista de normas / checks */}
@@ -43,7 +45,7 @@ export const CorrosionDurability = () => {
                   <IconCircleCheckFilled className="w-6 h-6 text-green-600 shrink-0 mt-0.5" />
                   <div>
                     <h3 className="text-gray-900 font-bold mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                    {/* <p className="text-gray-600 text-sm">{item.description}</p> */}
                   </div>
                 </div>
               ))}

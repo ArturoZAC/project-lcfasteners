@@ -13,7 +13,9 @@ export const MechanicalFunctionalTesting = () => {
                 Ensayos Mecánicos y Funcionales
               </h2>
               <p className="text-gray-600 text-base">
-                Validación técnica orientada a desempeño, seguridad y confiabilidad del ensamblaje.
+                {/* Validación técnica orientada a desempeño, seguridad y confiabilidad del ensamblaje. */}
+                Validación de sistemas mediante ensayos de precarga, coeficiente de fricción,
+                resistencia a la corrosión y verificación documental.
               </p>
             </div>
 

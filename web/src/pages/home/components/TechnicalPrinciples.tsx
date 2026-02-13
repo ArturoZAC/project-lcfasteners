@@ -12,25 +12,24 @@ export const TechnicalPrinciples = () => {
       icon: IconShieldCheckFilled,
       title: "Transparencia técnica",
       description:
-        "Garantizamos absolute total en cada fase del procesamiento y control de calidad.",
+        "Trazabilidad completa en cada etapa del suministro, desde la definición normativa hasta la validación final del desempeño funcional.",
     },
     {
       icon: IconScale,
       title: "Neutralidad técnica",
       description:
-        "Independencia de criterio basada estrictamente en datos técnicos y evidencia científica.",
+        "Las decisiones se fundamentan exclusivamente en normas, datos medibles y evidencia verificable.",
     },
     {
       icon: IconFileTextSpark,
       title: "Normas abiertas",
-      description:
-        "Adopción rigurosa con estándares internacionales accesibles para su verificación.",
+      description: "Aplicación rigurosa de estándares internacionales accesibles y auditables.",
     },
     {
       icon: IconCircleCheckFilled,
       title: "Desempeño verificable",
       description:
-        "Cada componente es sometido a ensayos comprobables que certifican su capacidad funcional.",
+        "Validación mediante ensayos mecánicos, funcionales y de resistencia a la corrosión.",
     },
   ];
 

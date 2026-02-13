@@ -3,6 +3,15 @@ import main from "../../../assets/modelo/fondomodel.webp";
 // import { RadialHighlight } from "../../../ui/RadialHighlight";
 
 export const ManagementModelHero = () => {
+  const keyBlocks = [
+    "Gobernanza Técnica",
+    "Autoridad de Calidad",
+    "Normas Abiertas",
+    "Integración Técnica Transversal",
+    "Trazabilidad Técnica",
+    "Mejora Continua e I+D+i",
+  ];
+
   return (
     <Banner
       backgroundImage={main}
@@ -19,19 +28,32 @@ export const ManagementModelHero = () => {
 
         {/* Título principal */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight"> */}
-          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"> */}
           Modelo de Gestión y Enfoque de Mercado
         </h1>
 
         {/* Descripción */}
-        <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-          {/* <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-semibold"> */}
-          {/* <p className="text-gray-800 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"> */}
-          {/* <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"> */}
-          Estructura estratégica diseñada para la excelencia técnica y operativa en suministros
-          industriales de alto rendimiento.
+        <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+          Nuestro modelo de gestión se fundamenta en normas abiertas, gobernanza técnica y
+          trazabilidad documental integral, asegurando decisiones basadas en mérito técnico y
+          cumplimiento regulatorio.
         </p>
+
+        {/* Bloques Clave */}
+        <div className="mt-10">
+          {/* <p className="text-white/80 text-xs md:text-sm font-semibold tracking-wider mb-4 uppercase">
+            Bloques Clave
+          </p> */}
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+            {keyBlocks.map((block, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium hover:bg-white/20 transition-all duration-300"
+              >
+                {block}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </Banner>
   );
